@@ -6,13 +6,14 @@ import requests
 dotenv.load_dotenv(override=True)
 
 
-def import_input(day, year):
-    input_path = "data/day" + str(day) + ".txt"
+def import_input(day_num, year):
+    input_path = f"data/{year}/day{day_num}.txt"
     if not os.path.isfile(input_path):
+
         cookies = {"session": f"{os.environ['SESSION']}"}
 
         req = requests.get(
-            f"https://adventofcode.com/{year}/day/{day}/input",
+            f"https://adventofcode.com/{year}/day/{day_num}/input",
             cookies=cookies,
         )
 

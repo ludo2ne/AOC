@@ -1,7 +1,7 @@
 import os
 
 from time import time
-from utils.get_input import import_input
+from src.utils.get_input import import_input
 
 example = """3   4
 4   3
@@ -47,9 +47,12 @@ def part2(text):
 
 
 if __name__ == "__main__":
-    day_num = "".join([n for n in os.path.basename(__file__) if n.isdigit()])
-    import_input(day=day_num, year=2024)
-    input_path = f"data/day{day_num}.txt"
+    file_path = os.path.abspath(__file__)
+    day_num = int(file_path.split("day")[1].split(".")[0])
+    year = int(os.path.basename(os.path.dirname(file_path)))
+    import_input(day_num=day_num, year=year)
+
+    input_path = f"data/{year}/day{day_num}.txt"
     text_input = open(input_path, "r").read()
 
     start_time = time()
