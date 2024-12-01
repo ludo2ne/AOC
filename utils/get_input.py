@@ -6,7 +6,7 @@ import requests
 dotenv.load_dotenv(override=True)
 
 
-def import_input(day, year=2023):
+def import_input(day, year):
     input_path = "data/day" + str(day) + ".txt"
     if not os.path.isfile(input_path):
         cookies = {"session": f"{os.environ['SESSION']}"}
