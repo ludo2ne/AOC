@@ -1,7 +1,11 @@
 # Avdent of Code
 
-- [](https://adventofcode.com/2024)
+- [2024](https://adventofcode.com/2024) : Python
 
+
+## Install packages
+
+- `pip install -r requirements.txt`
 
 ## Import data files
 

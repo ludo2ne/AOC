@@ -28,4 +28,4 @@ def import_input(day_num, year):
 
 
 if __name__ == "__main__":
-    import_input(4)
+    import_input(4, 2023)

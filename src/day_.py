@@ -1,12 +1,12 @@
 import os
 
 from time import time
-from utils.get_input import import_input
+from src.utils.get_input import import_input
 
 example = """__paste_here__"""
 
 
-def format_dataset(text):
+def format_dataset(text: str) -> list[str]:
     lines = text.splitlines()
 
     for index, line in enumerate(lines):
@@ -15,14 +15,14 @@ def format_dataset(text):
     return split_line
 
 
-def part1(text):
+def part1(text: str) -> int:
     res = 0
     format_dataset(text)
 
     return res
 
 
-def part2(text):
+def part2(text: str) -> int:
     res = 0
     format_dataset(text)
 

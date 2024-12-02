@@ -3,10 +3,13 @@
         "--max-line-length=120"
     ],
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.insertSpaces": true,
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
     },
     "python.analysis.extraPaths": [
         "./*"
