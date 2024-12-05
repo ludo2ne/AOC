@@ -1,6 +1,6 @@
 import os
-
 from time import time
+
 from src.utils.get_input import import_input
 
 example = """__paste_here__"""
@@ -10,7 +10,7 @@ def format_dataset(text: str) -> list[str]:
     lines = text.splitlines()
 
     for index, line in enumerate(lines):
-        split_line = line.split(' ')
+        split_line = line.split(" ")
 
     return split_line
 
