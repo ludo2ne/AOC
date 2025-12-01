@@ -1,5 +1,6 @@
 import os
 import sys
+
 import dotenv
 import requests
 
@@ -7,10 +8,14 @@ dotenv.load_dotenv(override=True)
 
 
 def import_input(day_num, year):
-    input_path = f"data/{year}/day{day_num}.txt"
-    if not os.path.isfile(input_path):
+    base_dir = "data"
+    year_dir = os.path.join(base_dir, str(year))
+    os.makedirs(year_dir, exist_ok=True)
 
-        cookies = {"session": f"{os.environ['SESSION']}"}
+    input_path = f"{year_dir}/day{day_num}.txt"
+
+    if not os.path.isfile(input_path):
+        cookies = {"session": os.environ["SESSION"]}
 
         req = requests.get(
             f"https://adventofcode.com/{year}/day/{day_num}/input",
@@ -19,13 +24,9 @@ def import_input(day_num, year):
 
         if req.status_code == 200:
             with open(input_path, "w") as file:
-                file.write("\n".join(req.text.split("\n")))
+                file.write(req.text.rstrip("\n"))
         else:
             print(
                 f"Failed to download the file. Status code: {req.status_code}",
                 file=sys.stderr,
             )
-
-
-if __name__ == "__main__":
-    import_input(4, 2023)
