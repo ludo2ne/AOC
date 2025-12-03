@@ -1,7 +1,7 @@
 import os
 from time import time
 
-from src.utils.get_input import import_input
+from utils.get_input import import_input
 
 example = """__paste_here__"""
 
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     text_input = open(input_path, "r").read()
 
     start_time = time()
-    print(f"1. Example :  {part1(example):<20} ({time()-start_time:.3f} s)")
+    print(f"1. Example :  {part1(example):<20} ({time() - start_time:.3f} s)")
     # start_time = time()
     # print(f"1. Input   :  {part1(text_input):<20} ({time()-start_time:.3f} s)")
 
