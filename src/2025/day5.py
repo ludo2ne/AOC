@@ -3,9 +3,10 @@ from time import time
 
 from utils.get_input import import_input
 
-example = """43-46
-9-10
-3-7
+example = """3-5
+10-14
+16-20
+12-18
 
 1
 5
@@ -97,5 +98,3 @@ if __name__ == "__main__":
     print(f"2. Example :  {part2(example):<20} ({time() - start_time:.3f} s)")
     start_time = time()
     print(f"2. Input   :  {part2(text_input):<20} ({time() - start_time:.3f} s)")
-    # > 4308034370353
-    # > 4967949163335
